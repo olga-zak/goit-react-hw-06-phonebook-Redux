@@ -18,7 +18,6 @@ export const ContactList = () => {
             id={contact.id}
             name={contact.name}
             number={contact.number}
-            // deleteContact={deleteContact}
           />
         );
       })}
