@@ -19,6 +19,26 @@ export const rootReducer = (state = initialState, action) => {
           contact => contact.id !== action.payload
         ),
       };
+    case 'contacts/addContact':
+      // Нужно вернуть новый объект состояния
+      return {
+        // в котором есть все данные существующего состояния
+        ...state,
+        // и новый массив контактов
+        contacts: [
+          // в котором есть все существующие задачи
+          ...state.contacts,
+          // и объект нового контакта
+          action.payload,
+        ],
+      };
+    case 'filter/filterContacts':
+      return {
+        ...state,
+        contacts: state.contacts.filter(contact =>
+          contact.name.toLowerCase().includes(action.payload.text)
+        ),
+      };
     default:
       return state;
   }
