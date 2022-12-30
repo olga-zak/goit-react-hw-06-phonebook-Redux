@@ -35,9 +35,7 @@ export const rootReducer = (state = initialState, action) => {
     case 'filter/filterContacts':
       return {
         ...state,
-        contacts: state.contacts.filter(contact =>
-          contact.name.toLowerCase().includes(action.payload.text)
-        ),
+        filter: action.payload,
       };
     default:
       return state;

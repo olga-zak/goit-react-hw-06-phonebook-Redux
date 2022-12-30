@@ -3,7 +3,7 @@ import { FilterField } from './Filter.styled';
 import { Input } from 'components/ContactForm/ContactForm.styled';
 
 import { useDispatch } from 'react-redux';
-import { filterContacts } from 'redux/actions';
+import { getFilterValue } from 'redux/actions';
 
 //  const saveFilteredValue = event => {
 //    setFilter(event.target.value);
@@ -21,7 +21,7 @@ export const Filter = () => {
   const dispatch = useDispatch();
   const handleChange = event => {
     const text = event.target.value.toLowerCase();
-    dispatch(filterContacts(text));
+    dispatch(getFilterValue(text));
   };
   return (
     <FilterField>

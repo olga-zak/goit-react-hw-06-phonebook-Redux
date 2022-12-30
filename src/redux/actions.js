@@ -18,11 +18,11 @@ export const addContact = (name, number) => {
   };
 };
 
-export const filterContacts = text => {
+export const getFilterValue = text => {
   return {
     type: 'filter/filterContacts',
     payload: {
-      text,
+      query: text,
     },
   };
 };
