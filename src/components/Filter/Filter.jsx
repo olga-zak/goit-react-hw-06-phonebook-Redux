@@ -1,21 +1,8 @@
-//import PropTypes from 'prop-types';
 import { FilterField } from './Filter.styled';
 import { Input } from 'components/ContactForm/ContactForm.styled';
 
 import { useDispatch } from 'react-redux';
-import { getFilterValue } from 'redux/actions';
-
-//  const saveFilteredValue = event => {
-//    setFilter(event.target.value);
-//  };
-
-//  const filterContacts = () => {
-//    const optimizedString = filter.toLowerCase();
-
-//    return contacts.filter(({ name }) =>
-//      name.toLowerCase().includes(optimizedString)
-//    );
-//  };
+import { getFilterValue } from 'redux/filter/filter-actions';
 
 export const Filter = () => {
   const dispatch = useDispatch();
@@ -38,8 +25,3 @@ export const Filter = () => {
     </FilterField>
   );
 };
-
-// Filter.propTypes = {
-//   filter: PropTypes.string.isRequired,
-//   findContact: PropTypes.func.isRequired,
-// };
